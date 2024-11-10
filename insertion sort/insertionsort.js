@@ -25,3 +25,29 @@ export function insertionSortShift (arr) {
 
     return arr;
 }
+
+export function insertionSortswap(arr) {
+    console.log("List before sorting: " + arr);
+    let iterations = 0;
+
+    function swap(indexA, indexB) {
+    let temp = arr[indexA];
+    arr[indexA] = arr[indexB];
+    arr[indexB] = temp;
+    }
+
+    for (let i = 1; i < arr.length; i++) {
+        let j = i;
+        while (j > 0 && arr[j] < arr[j-1]) {
+            swap(j, j-1)
+            j--;
+            iterations++;
+        }
+        iterations++;
+    }
+
+    console.log("List after sorting: " + arr);
+    console.log("Iterations: " + iterations)
+    return arr;
+}
+
